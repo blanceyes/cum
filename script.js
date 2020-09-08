@@ -20,4 +20,4 @@ $(document).ready(function() {
 });
 
 //document.getElementById('gen').addEventListener('click', generateCharacter);
-document.getElementById('gen').addEventListener('click', generateCharacter);
+document.getElementById('gen').addEventListener('click touchstart', generateCharacter);

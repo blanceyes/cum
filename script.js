@@ -15,9 +15,17 @@ function readFile(array, fileName) {
 	})
 }
 
+var clickEvent = (function() {
+	if ('ontouchstart' in document.documentElement === true)
+	  return 'touchstart';
+	else
+	  return 'click';
+  })();
+
+
 $(document).ready(function() {
 	console.log('jquery loaded');
 });
 
 //document.getElementById('gen').addEventListener('click', generateCharacter);
-document.getElementById('gen').addEventListener('click touchstart', generateCharacter);
+document.getElementById('gen').addEventListener(clickEvent, generateCharacter);

@@ -1,5 +1,6 @@
 var descriptors = new Array;
 readFile(descriptors, 'res/descriptors.txt');
+console.log(descriptors);
 var nouns = new Array;
 readFile(nouns, 'res/nouns.txt');
 
@@ -15,17 +16,9 @@ function readFile(array, fileName) {
 	})
 }
 
-var clickEvent = (function() {
-	if ('ontouchstart' in document.documentElement === true)
-	  return 'touchstart';
-	else
-	  return 'click';
-  })();
-
-
 $(document).ready(function() {
 	console.log('jquery loaded');
 });
 
 //document.getElementById('gen').addEventListener('click', generateCharacter);
-document.getElementById('gen').addEventListener(clickEvent, generateCharacter);
+document.getElementById('gen').onclick = generateCharacter;

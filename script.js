@@ -3,6 +3,7 @@ readFile(descriptors, 'res/descriptors.txt');
 console.log(descriptors);
 var nouns = new Array;
 readFile(nouns, 'res/nouns.txt');
+const btn = document.querySelector('button');
 
 function generateCharacter(e) {
 	document.getElementById('des').innerHTML = descriptors[Math.floor(Math.random()*descriptors.length)];
@@ -21,4 +22,4 @@ $(document).ready(function() {
 });
 
 //document.getElementById('gen').addEventListener('click', generateCharacter);
-document.getElementById('gen').onclick = generateCharacter;
+btn.onclick = generateCharacter;
